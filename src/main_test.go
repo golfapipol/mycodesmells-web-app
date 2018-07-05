@@ -36,7 +36,7 @@ func TestGetCountries(t *testing.T) {
 	}
 	t.Log("Expected first country to be Poland")
 
-	usa := Country{Code: "USA", Name: "USA", Captial: "Washington"}
+	usa := Country{Code: "USA", Name: "USA", Capital: "Washington"}
 	if c[1] != usa {
 		t.Fatalf("Expected first country to be USA, not: %v\n", c[1])
 	}
