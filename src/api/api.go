@@ -1,6 +1,7 @@
 package api
 
 import (
+	"db"
 	"encoding/json"
 	"net/http"
 )
@@ -10,9 +11,6 @@ type API struct {
 }
 
 func (api API) GetCountries(w http.ResponseWriter, r *http.Request) {
-	c := []Country{
-		Country{Code: "PL", Name: "Poland", Capital: "Warsaw"},
-		Country{Code: "USA", Name: "USA", Capital: "Washington"},
-	}
+	c, _ := api.DataSource.Countries()
 	json.NewEncoder(w).Encode(&c)
 }
