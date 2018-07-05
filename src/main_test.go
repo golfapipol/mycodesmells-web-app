@@ -1,14 +1,17 @@
 package main
 
 import (
+	_api "api"
 	"encoding/json"
 	"net/http"
 	"net/http/httptest"
+	"test"
 	"testing"
 )
 
 func init() {
-	http.HandleFunc("/countries", GetCountries)
+	api := _api.API{DataSource: test.FakeDataSource{}}
+	http.HandleFunc("/countries", api.GetCountries)
 }
 
 func TestGetCountries(t *testing.T) {
