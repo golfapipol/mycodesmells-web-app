@@ -1,5 +1,7 @@
 package db
 
 type Country struct {
-	Code, Name, Capital string
+	Code    string `json:"code"`
+	Name    string `json:"name"`
+	Capital string `json:"capital"`
 }
